@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<!-- Positions spawned in gazebo -->
+<!--
+           ur3e        intel         diff between base_link and pc_cam_base_link
+x           5.3         4.71         0.59
+y           3.5        -4.27989      0.77
+z           0.92        0.02         0.90
+roll        0.0         0.0          0.00
+pitch       0.0         0.0          0.00
+yaw        -1.5707      0.0          -1-5707
+-->
+<!-- Positions spawned in gazebo -->
+
+    <!-- static publish the transform between world and robotic manipulator base link -->
+    <node pkg="tf" type="static_transform_publisher" name="static_world_base_link" 
+          args="0.59 0.77 0.9 -1.5707 0 0 world base_link 20">
+    </node>
+    
+    <!-- static publish the transform between world and the pc_cam_base_link-->
+    <node pkg="tf" type="static_transform_publisher" name="static_world_pc_cam_base_link" 
+          args="0 0 0 0 0 0 world pc_cam_base_link 20">
+    </node>
+    
+    <!-- launch rviz -->
+    <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find box_camera_description)/rviz_config/ur3e_rg2_pc_cam.rviz"/-->
+
+</launch>

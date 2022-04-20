@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- service client -->
+  <node name="record_odom_ac" pkg="move_robot" 
+        type="odom_record_ac.py" output="screen"/>
+  
+</launch>

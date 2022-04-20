@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- service server -->
+  <node name="goto_loading_pos_service_server" pkg="move_robot" 
+        type="goto_loading_pos_service_server.py" output="screen"/>
+
+  <!-- gazebo RB1 -->
+  
+  <!--include file="$(find rb1_base_gazebo)/launch/warehouse_rb1.launch" /-->
+  
+</launch>

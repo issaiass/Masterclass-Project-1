@@ -1,0 +1,16 @@
+controller_list:
+  - name: fake_scaled_pos_joint_traj_controller_controller
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+  - name: fake_gripper_controller
+    joints:
+      - rg2_gripper_finger_left_joint
+      - rg2_gripper_finger_right_joint # added  
+initial:  # Define initial robot poses.
+  - group: scaled_pos_joint_traj_controller
+    pose: original

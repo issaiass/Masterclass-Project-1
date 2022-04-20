@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="ur3e" >
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find ur_e_description)/urdf/common.gazebo.xacro" />
+
+  <!-- ur3e -->
+  <xacro:include filename="$(find ur_e_description)/urdf/ur3e.urdf.xacro" />
+
+
+
+  <!-- gripper  -->
+  <xacro:include filename="$(find rg2_gripper_description)/urdf/rg2_gripper.urdf.xacro"/>
+
+
+
+  <!-- arm -->
+  <xacro:ur3e_robot prefix="" joint_limited="false"/>
+
+
+  <!-- tool -->
+  <!-- XACRO RG2 --> <!--<xacro:macro name="rg2_gripper" params="prefix parent *origin"-->
+  <xacro:rg2_gripper prefix="rg2_gripper" parent="ee_link">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </xacro:rg2_gripper>
+
+
+  <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  <material name="light_brown">
+    <color rgba="0.5451 0.2706 0.0745 1"/>
+  </material>
+  <material name="dark_brown">
+    <color rgba="0.6471 0.2706 0.1647 0.5"/>
+  </material>
+
+  <joint name="base_to_table" type="fixed">
+    <parent link="base_link"/>
+    <child link="table"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="table">
+    <visual>
+      <geometry>
+        <box size="0.04 1.5 0.60"/>
+      </geometry>
+      <material name="dark_brown"/>
+      <origin rpy="0 1.57075 1.57075" xyz="0.67 0.22 -0.025"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 1.5 0.60"/>
+      </geometry>
+      <origin rpy="0 1.57075 1.57075" xyz="0.67 0.22 -0.025"/>
+    </collision>
+  </link>
+
+  <joint name="base_to_wall" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="wall">
+    <visual>
+      <geometry>
+        <box size="0.04 2 3"/>
+      </geometry>
+      <material name="light_brown"/>
+      <origin rpy="0 0 1.57075" xyz="0.43 0.55 0.6"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 2 3"/>
+      </geometry>
+      <origin rpy="0 0 1.57075" xyz="0.43 0.55 0.6"/>
+    </collision>
+  </link>
+
+</robot>

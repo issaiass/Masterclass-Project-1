@@ -1,0 +1,10 @@
+# goal
+
+----
+# result 
+
+----
+# feedback
+string status
+float32[2]  current_pos
+float32 current_vel

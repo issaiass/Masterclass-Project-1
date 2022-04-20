@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="use_map_topic" default="true"/>
+  <arg name="scan_topic" default="scan" />
+
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find rb1_mapping)/maps/map.yaml"/>  
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!--- Run AMCL -->
+  <!-- check documentation parameters on, also check urdf:
+       odom_frame_id: "robot_odom"
+       base_frame_id: "robot_base_footprint" -->
+  <node pkg="amcl" type="amcl" name="amcl">
+    <param name="use_map_topic" value="$(arg use_map_topic)"/>
+    <!-- Publish scans from best pose at a max of 10 Hz -->
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <rosparam command="load" file="$(find rb1_localization)/params/amcl_params.yaml" />
+  </node>  
+  
+</launch>

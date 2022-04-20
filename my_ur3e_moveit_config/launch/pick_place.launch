@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- gazebo RB1 -->
+  <!--include file="$(find box_camera_description)/launch/warehouse_ur3e_rg2.launch" /-->
+  
+  <!-- moveit -->
+  <include file="$(find my_ur3e_moveit_config)/launch/my_ur3e_planning_execution.launch" />  
+  
+  <!-- pick and place node -->
+  <node name="pick_place" pkg="my_ur3e_moveit_config" type="pick_place.py" output="screen"/>
+       
+</launch>

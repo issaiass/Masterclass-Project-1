@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- detection frame node -->
+  <node name="detect_cart" pkg="attach_to_cart" 
+        type="detect_cart.py" output="screen"/>
+</launch>

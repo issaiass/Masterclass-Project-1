@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- GoToLoadPosition Service Server -->
+  <include file="$(find move_robot)/launch/goto_loading_pos_service.launch" />
+
+  <!-- Launch Gazebo with RB1 and Sample World -->
+  <include file="$(find rb1_base_gazebo)/launch/warehouse_rb1.launch" />
+
+  <!-- GoToLoadPosition Service Client -->
+  <include file="$(find move_robot)/launch/goto_loading_pos_client.launch" />
+
+  <!-- Record Odometry Action Server -->
+  <include file="$(find move_robot)/launch/record_odom_as.launch" />
+
+  <!-- Record Odometry Action Client -->
+  <include file="$(find move_robot)/launch/record_odom_ac.launch" />
+
+  <!-- Attach to cart -->
+  <include file="$(find move_robot)/launch/attach_to_cart.launch" />
+
+</launch>

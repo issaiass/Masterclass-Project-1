@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>move_robot</name>
+  <version>0.0.0</version>
+  <description>The move_robot package</description>
+
+  <maintainer email="user@todo.todo">user</maintainer>
+
+  <license>TODO</license>
+
+  <!-- Part 1 - goto_loading_pos.py -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend> 
+  <build_depend>nav_msgs</build_depend>   
+  <!-- Part 2 - goto_loading_pos_service_server.py -->
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <!-- Part 3 - action server -->
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+
+  <!-- Part 1 - goto_loading_pos.py -->
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>  
+  <!-- Part 2 - goto_loading_pos_service_server.py -->
+  <build_export_depend>message_runtime</build_export_depend>
+  <!-- Part 3 - action server -->
+  <build_export_depend>actionlib</build_export_depend>
+  <build_export_depend>actionlib_msgs</build_export_depend>
+
+  <!-- Part 1 - goto_loading_pos.py -->
+  <exec_depend>rospy</exec_depend>
+
+  <!-- Part 1 - goto_loading_pos.py -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>  
+  <!-- Part 2 - goto_loading_pos_service_server.py -->
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <!-- Part 3 - action server -->
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
+
+
+  <export>
+  </export>
+</package>

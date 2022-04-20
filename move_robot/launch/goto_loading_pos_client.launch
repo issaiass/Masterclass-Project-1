@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- service client -->
+  <node name="goto_loading_pos_service_client" pkg="move_robot" 
+        type="goto_loading_pos_service_client.py" output="screen"/>
+  
+</launch>

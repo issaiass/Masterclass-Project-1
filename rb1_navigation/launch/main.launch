@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- gazebo RB1 -->
+  <include file="$(find rb1_base_gazebo)/launch/warehouse_rb1.launch" />
+
+  <!-- load points to the parameter server -->
+  <rosparam file="$(find rb1_navigation)/params/poi.yaml" command="load"/>
+  
+  <!-- launch amcl, mapserver and move_base-->
+  <include file="$(find rb1_navigation)/launch/navigation.launch" />
+  
+  <!-- launch service client that uses action client to send goals -->
+  <node pkg="rb1_navigation" type="main_navigation.py" respawn="false" name="main_navigation" output="screen">
+  </node>
+  
+  <!-- launch rviz with a complete config -->
+  <node pkg="rviz" type="rviz" respawn="false" name="rviz" output="screen" 
+        args="-d $(find rb1_navigation)/config/navigation.rviz">
+  </node>  
+
+</launch>
+

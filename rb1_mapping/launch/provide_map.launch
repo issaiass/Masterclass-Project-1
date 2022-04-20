@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="map_file" default="$(find rb1_mapping)/maps/map.yaml"/>
+
+  <!-- Run the map server -->
+  <node name="map_server_launcher" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+</launch>

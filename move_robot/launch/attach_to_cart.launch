@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Attach To Cart Service Client -->
+  <node name="attach_to_cart_service_client" pkg="move_robot" 
+        type="attach_to_cart.py" output="screen"/>
+
+</launch>

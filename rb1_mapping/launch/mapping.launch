@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="scan_topic"  default="/scan" />
+  <!-- For viewing the correct frame names use rosrun tf2_tools view_frames.py -->
+  <arg name="base_frame"  default="robot_base_footprint"/>
+  <arg name="odom_frame"  default="robot_odom"/>
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <rosparam command="load" file="$(find rb1_mapping)/params/gmapping_params.yaml" />
+  </node>
+</launch>

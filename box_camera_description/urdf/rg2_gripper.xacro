@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="ur3e_rg2" >
+
+  <!-- XACRO for includes -->
+  <xacro:include filename="$(find rg2_gripper_description)/urdf/rg2_gripper.urdf.xacro"/>
+  <xacro:include filename="$(find ur_e_description)/urdf/ur3e_robot.urdf.xacro"/>
+
+  <!-- XACRO RG2 --> <!--<xacro:macro name="rg2_gripper" params="prefix parent *origin"-->
+  <xacro:rg2_gripper prefix="rg2_gripper" parent="ee_link">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </xacro:rg2_gripper>
+
+</robot>

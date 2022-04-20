@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- attach cart node -->
+  <node name="attach_to_cart" pkg="attach_to_cart" 
+        type="attach_cart.py" output="screen"/>
+</launch>
