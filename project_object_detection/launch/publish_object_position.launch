@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- launch publish_object_position -->
+  <node name="publish_object_position" pkg="project_object_detection" type="publish_object_position.py" output="screen"/>
+
+</launch>
